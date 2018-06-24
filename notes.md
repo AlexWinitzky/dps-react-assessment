@@ -12,3 +12,7 @@ I've succesfully imported my secret key into my .env.  If this key were to fall 
 Saturday 9:50pm
 
 Spent about 6 hours making all sorts of attempts to get Beers.js to work.  Axios call succesfully brings in the data, but the map function errors out and app breaks.  I think that I still have an object rather than an array but I can't figure out why, I've set initial state: state = { beers: [] }, under the promise I've assigned const beers = res.data, then this.setState = ({ beers }).  Nevertheless when I call this.state.beers.map in my render, the error says either "beers" is undefined or map is not a function.  I now have an unquenchable desire to kill, so, thanks Devpoint, churning out homicidal maniacs.
+
+Sunday 11am
+
+Thousands of iterations later and as many google and stackoverflow queries, I have the same error.  I can see the data in my Dev tools in the class component, I can see that by the time it reaches my render function the array is empty, despite setting state.  Map...Is...Not...A...Function.

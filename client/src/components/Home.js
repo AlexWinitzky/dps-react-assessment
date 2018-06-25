@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { Header, Segment, Divider, Grid, Image } from 'semantic-ui-react';
 import ReactMarkDown from 'react-markdown';
 import axios from 'axios';
-import dpsLogo from '../images/dpsLogo.svg';
+import beerPic from '../images/beer.jpeg';
 
 class Home extends Component {
   state = { assignmentMarkdown: '' };
@@ -21,8 +21,8 @@ class Home extends Component {
     return(
       <Segment basic>
         <Segment basic textAlign='center'>
-          <Image style={styles.centered} size='tiny' src={dpsLogo} alt='DevPoint Studios Logo' />
-          <Header as='h1' style={styles.header}>DevPoint Studios React Assessment</Header>
+          <Image style={styles.centered} size='medium' src={beerPic} alt='Glass of beer' />
+          <Header as='h1' style={styles.header}>If you like websites about beer, you just hit the jackpot.</Header>
         </Segment>
         <Grid>
           <Grid.Column computer={8} tablet={8} mobile={16}>
@@ -31,10 +31,12 @@ class Home extends Component {
                 as='h1'
                 textAlign='center'
                 style={styles.header}>
-                  Assessment Details:
+                  But just what is a beer website?
               </Header>
               <Divider />
-              <ReactMarkDown source={this.state.assignmentMarkdown} />
+              Well, it's basically like any other website, it's content is just centered around beer as opposed to say, donuts.  
+              For example, on a beer website you will almost NEVER find information on banking but you WILL find stuff about 
+              lagers or IPAs.  Don't expect to get it right away, it takes time.
             </Segment>
           </Grid.Column>
           <Grid.Column computer={8} tablet={8} mobile={16}>
@@ -43,15 +45,14 @@ class Home extends Component {
                 as='h1'
                 textAlign='center'
                 style={styles.header}>
-                  Assessment API Endpoints:
+                  Overview:
               </Header>
               <Divider />
-              <iframe
-                style={styles.iframe}
-                title='Assignment README.md'
-                frameBorder={0}
-                src='http://localhost:3001/rails/info/routes'
-              />
+              <ol>
+              <li>  It's a website</li>
+              <li>  It's a drink</li>
+              <li>  It's a website about a drink</li>
+              </ol>
             </Segment>
           </Grid.Column>
         </Grid>

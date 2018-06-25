@@ -16,3 +16,7 @@ Spent about 6 hours making all sorts of attempts to get Beers.js to work.  Axios
 Sunday 11am
 
 Thousands of iterations later and as many google and stackoverflow queries, I have the same error.  I can see the data in my Dev tools in the class component, I can see that by the time it reaches my render function the array is empty, despite setting state.  Map...Is...Not...A...Function.
+
+Sunday 8pm
+
+People throw around words like "genius," and "greatest living mind," and "incredibly chiseled features."  If they want to apply those words to me, who am I to stand in their way?  Let me tell you a little something about axios calls, my friends: it's more of an art than a science in my experience.  It's a delicate dance that entrances the senses.  The French refer to it as Le Chanson D'Axios, and it is prized for its sensual qualities.

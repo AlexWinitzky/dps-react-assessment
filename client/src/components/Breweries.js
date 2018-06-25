@@ -3,28 +3,36 @@ import axios from 'axios';
 import {
   Container,
   Card,
+  Image,
 } from 'semantic-ui-react'
 
-class BeerList extends React.Component {
-  state = { beers: [] }
+class BreweryList extends React.Component {
+  state = { brews: [] }
 
   componentDidMount() {
-    axios.get('/api/all_beers')
+    axios.get('/api/all_breweries')
       .then(res => {
-        this.setState({ beers: res.data.entries })
+        this.setState({ brews: res.data.entries })
       })
       .catch(err => {
         console.log(err)
       })
   }
 
-  beers = () => {
-    return this.state.beers.map(b => {
+  brews = () => {
+    return this.state.brews.map(b => {
       return (
         <Card key={b.name}>
           <Card.Header>
-            {b.name_display}
+            {b.name}
           </Card.Header>
+          <Image src='medium'/>
+          <Card.Content>
+            est. {b.established}
+          </Card.Content>
+          <Card.Content>
+            {b.website}
+          </Card.Content>
           <Card.Meta>
             {b.description}
           </Card.Meta>
@@ -37,11 +45,11 @@ class BeerList extends React.Component {
     return (
       <Container>
         <Card.Group itemsPerRow={4}>
-          {this.beers()}
+          {this.brews()}
         </Card.Group>
       </Container>
     )
   }
 }
 
-export default BeerList;
+export default BreweryList;

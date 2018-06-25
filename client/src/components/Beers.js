@@ -11,24 +11,22 @@ class BeerList extends React.Component {
   componentDidMount() {
     axios.get('/api/all_beers')
       .then(res => {
-        // const beers = res.data
-        this.setState({ beers: res.data })
+        this.setState({ beers: res.data.entries })
       })
-    .catch( err => {
-      console.log(err)
-    })
+      .catch(err => {
+        console.log(err)
+      })
   }
 
   beers = () => {
-    let { beers } = this.state
-    return beers.map( b => {
-      
-      <Card key={b.id}>
-        <Card.Content>
-          { b.name }
-        </Card.Content>
-      </Card>
-      
+    return this.state.beers.map(b => {
+      return (
+        <Card key={b.name}>
+          <Card.Content>
+            {b.name_display}
+          </Card.Content>
+        </Card>
+      )
     }
     )
   }
@@ -36,19 +34,11 @@ class BeerList extends React.Component {
     return (
       <Container>
         <Card.Group itemsPerRow={4}>
-          { this.beers() }
+          {this.beers()}
         </Card.Group>
       </Container>
     )
   }
-  // render() {
-  //   // let { beers } = this.state
-  //   return(
-  //     <ul>
-  //      { this.state.beers.map( b => <li key={b.entries}>{b.name}</li>) }
-  //     </ul>
-  //   )
-  // }
 }
 
 export default BeerList;

@@ -1,21 +1,8 @@
 import React, { Component } from 'react';
 import { Header, Segment, Divider, Grid, Image } from 'semantic-ui-react';
-import ReactMarkDown from 'react-markdown';
-import axios from 'axios';
 import beerPic from '../images/beer.jpeg';
 
 class Home extends Component {
-  state = { assignmentMarkdown: '' };
-
-  componentDidMount() {
-    axios.get('/api/assignment_details')
-      .then(res => {
-        this.setState({ assignmentMarkdown: res.data.file })
-      })
-      .catch( error => {
-        console.log(error.response);
-    });
-  }
 
   render() {
     return(
@@ -62,15 +49,11 @@ class Home extends Component {
 }
 
 const styles = {
-  iframe: {
-    width: '100%',
-    height: '100vh'
-  },
   centered: {
     margin: '0 auto',
   },
   header: {
-    color: '#2ecc40'
+    color: '#ADD8E6'
   }
 }
 

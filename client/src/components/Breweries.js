@@ -25,11 +25,17 @@ class BreweryList extends React.Component {
   brews = () => {
     return this.state.brews.map(b => {
       return (
-        <Card key={b.name}>
+        <Card key={b.id}>
+          {/* const images = b.images.map( p => {
+            return (
+              <Card.Content>
+                {p.medium}
+              </Card.Content>
+            )
+          }) */}
           <Card.Header>
             {b.name}
           </Card.Header>
-          <Image src='medium'/>
           <Card.Content>
             est. {b.established}
           </Card.Content>
@@ -47,17 +53,17 @@ class BreweryList extends React.Component {
   render() {
     return (
       <div>
-      <Segment basic style={styles.fullHeight}>
-      <Segment basic textAlign='center'>
-        <Image style={styles.centered} size='medium' src={beerPic} alt='Glass of beer' />
-        <Header as='h1' style={styles.header}>Where does beer come from?  Well, that's a pretty dumb question, it's breweries.</Header>
-      </Segment>
-      <Container>
-        <Card.Group itemsPerRow={4}>
-          { this.brews() }
-        </Card.Group>
-      </Container>
-      </Segment>
+        <Segment basic style={styles.fullHeight}>
+          <Segment basic textAlign='center'>
+            <Image style={styles.centered} size='medium' src={beerPic} alt='Glass of beer' />
+            <Header as='h1' style={styles.header}>Where does beer come from?  Well, that's a pretty dumb question, it's breweries.</Header>
+          </Segment>
+          <Container>
+            <Card.Group itemsPerRow={4}>
+              {this.brews()}
+            </Card.Group>
+          </Container>
+        </Segment>
       </div>
     )
   }
@@ -67,7 +73,7 @@ const styles = {
     margin: '0 auto',
   },
   header: {
-    color: '#2ecc40'
+    color: '#ADD8E6'
   },
   fullHeight: {
     height: '100vh',

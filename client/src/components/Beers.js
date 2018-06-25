@@ -60,7 +60,7 @@ const styles = {
     margin: '0 auto',
   },
   header: {
-    color: '#2ecc40'
+    color: '#ADD8E6'
   },
   fullHeight: {
     height: '100vh',
